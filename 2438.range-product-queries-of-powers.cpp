@@ -8,7 +8,7 @@
 class Solution
 {
 public:
-    static constexpr long MOD = 1'000'000'007;
+#define MOD 1000000007;
 
     static vector<int> productQueries(int n, const vector<vector<int>> &queries)
     {
@@ -16,7 +16,7 @@ public:
         powers.reserve(32);
         for (int i = 0; i < 32; ++i)
         {
-            const int mask = 1 << i;
+            const long mask = pow(2, i);
             if (n & mask)
                 powers.push_back(mask);
         }
